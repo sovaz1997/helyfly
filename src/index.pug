@@ -1,5 +1,7 @@
+- const imgPath = './assets/img'
+
 mixin logo(mix_class)
-  img(src="assets/img/logo.svg", class=mix_class).logo
+  img(src=`${imgPath}/logo.svg`, class=mix_class).logo
 
 
 mixin advantage(advantage_img, advantage_description, mix_class)
@@ -15,9 +17,16 @@ mixin stars(count, mix_class)
       else
         li.stars__item.stars__item--no-active
 
+mixin shedule_item(from, to, cost, left_places, mix_class)
+  div(class=mix_class).shedule-item
+    span.shedule-item__info #{from} - #{to}
+    span.shedule-item__info <strong>#{cost}$</strong>
+    span.shedule-item__info Осталось &mdash; #{left_places}
+    button.button.shedule-item__chose-button Выбрать
+
 mixin many_stars(mix_class)
   hr.line
-  img(src="../assets/img/many-stars.svg").many-stars__image
+  img(src=`${imgPath}/many-stars.svg`).many-stars__image
   span.many-start__description
   +stars(5, "many-stars__stars")
   hr.line
@@ -36,14 +45,14 @@ html(lang="en")
     main.site-content
       h1.visually-hidden Hellyfly - фотосессия в вертолете
 
-      section.welcome
-        h2.welcome__header Эксклюзивная фотосессия при полете на вертолете
+      section.section
+        h2.section__header Эксклюзивная фотосессия при полете на вертолете
         |
         |
         a(href="#").button.button--light Забронировать место
       section.advantages
         h2.advantages__header Фотосессия в вертолете
-        img.advantages__image(src="../assets/img/advantages-image.jpg")
+        img.advantages__image(src=`${imgPath}/advantages-image.jpg`)
 
         p.advantages__description.
           Полет на вертолете это прекрасная возможность получить
@@ -51,12 +60,61 @@ html(lang="en")
           лучшие моменты
         
         ul.advantages
-          +advantage("../assets/img/clock.svg", "3 часа съемки", "advantages__item").advantages__item
-          +advantage("../assets/img/messaging.svg", "Русский", "advantages__item").advantages__item
-          +advantage("../assets/img/cost.svg", "от 850$", "advantages__item").advantages__item
-          +advantage("../assets/img/location.svg", "Дубаи", "advantages__item").advantages__item
-          +advantage("../assets/img/camera.svg", "Более 50 фотографий", "advantages__item").advantages__item
-        +many_stars("advantages")
-        
+          +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "advantages__item").advantages__item
+          +advantage(`${imgPath}/messaging.svg`, "Русский", "advantages__item").advantages__item
+          +advantage(`${imgPath}/cost.svg`, "от 850$", "advantages__item").advantages__item
+          +advantage(`${imgPath}/location.svg`, "Дубаи", "advantages__item").advantages__item
+          +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "advantages__item").advantages__item
+        +many_stars("advantages__stars")
+      
+      section.section.photos
+        h2.section__header Фотографии пакета
 
-        
+        ul.photos__list
+          - for(let i = 1; i <= 8; i++)
+            li.photos__list-item
+              img(src=`${imgPath}/photo-${i}.jpg`).photos__list-image
+      
+      section.section.about
+        h2.visually-hidden Организатор
+
+        article.article
+          h2.artical__header Об организаторе
+          p.article__text.
+            Всем привет! Я фотограф Мария! И по мимо фотосъемки я так же являюсь членом группы экспертов туристической отрасли, которые хорошо разбираются 
+            в маркетинге, операциях 
+            и услугах обслуживания клиентов, специализирующихся 
+            на совместном использовании 
+            и частных турах. 
+            <br><br>
+            Сначала мы (я и моя команда) изучаем интересы клиентов, а затем придумываем подходящее решение, которое соответствует бюджету и планам клиента. 
+            Мы никогда не зависим 
+            от субпоставщиков 
+            и не свяжемся…
+          button.article__show-more Читать еще
+
+        article.article
+          h2.artical__header Что я предоставлю:
+          p.article__text.
+            Встречу вас на машине после длительного перелёта.<br>
+            Качественный подбор места и локации для вашей съемки.<br>
+            При необходимости всегда возможно прерваться на обед/ужин.<br>
+            Более 50 фотографий на выходе с обработкой и замечательные впечатления о Дубае !
+          button.article__show-more Читать еще
+      
+      section.photo-sessions
+        h2.article__header Доступная съемка в ближайщее время
+
+        table.article__schedule
+          thead
+            tr
+              td Пятница, <strong>14</strong> сентября
+          tbody
+            tr
+              td
+                +shedule_item("15:00", "18:00", 850, "1 место", "photo-sessions")
+            tr
+              td
+                +shedule_item("19:00", "22:00", 850, "1 место", "photo-sessions")
+
+        +many_stars("photo-sessions__stars")
