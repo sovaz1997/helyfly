@@ -7,6 +7,21 @@ mixin advantage(advantage_img, advantage_description, mix_class)
     img(src=advantage_img).advantage__img
     span.advantage__description= advantage_description
 
+mixin stars(count, mix_class)
+  ul(class=mix_class).stars
+    - for(let i = 0; i < 5; i++)
+      if i < count
+        li.stars__item.stars__item--active
+      else
+        li.stars__item.stars__item--no-active
+
+mixin many_stars(mix_class)
+  hr.line
+  img(src="../assets/img/many-stars.svg").many-stars__image
+  span.many-start__description
+  +stars(5, "many-stars__stars")
+  hr.line
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -28,14 +43,20 @@ html(lang="en")
         a(href="#").button.button--light Забронировать место
       section.advantages
         h2.advantages__header Фотосессия в вертолете
+        img.advantages__image(src="../assets/img/advantages-image.jpg")
+
         p.advantages__description.
           Полет на вертолете это прекрасная возможность получить
           новые ощущения! А наш замечательный фотограф запечатлит
           лучшие моменты
         
         ul.advantages
-          +advantage("../assets/img/clock.svg", "3 часа съемки", "advantages__item").inner.advantages__item
-          +advantage("../assets/img/camera.svg", "Более 50 фотографий", "advantages__item").inner.advantages__item
-          +advantage("../assets/img/location.svg", "Москва", "advantages__item").inner.advantages__item
-          +advantage("../assets/img/messaging.svg", "Готовы ответить на любые вопросы", "advantages__item").inner.advantages__item
+          +advantage("../assets/img/clock.svg", "3 часа съемки", "advantages__item").advantages__item
+          +advantage("../assets/img/messaging.svg", "Русский", "advantages__item").advantages__item
+          +advantage("../assets/img/cost.svg", "от 850$", "advantages__item").advantages__item
+          +advantage("../assets/img/location.svg", "Дубаи", "advantages__item").advantages__item
+          +advantage("../assets/img/camera.svg", "Более 50 фотографий", "advantages__item").advantages__item
+        +many_stars("advantages")
+        
+
         
