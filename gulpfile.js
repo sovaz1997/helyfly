@@ -21,7 +21,7 @@ gulp.task('style', function() {
 gulp.task('views', function buildHTML() {
   return gulp.src('src/*.pug')
   .pipe(pug({
-
+    pretty: true
   }))
   .pipe(gulp.dest("src/"))
 });
