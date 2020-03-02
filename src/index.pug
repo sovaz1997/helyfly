@@ -1,8 +1,15 @@
+mixin logo()
+  img(src="assets/img/logo.svg").logo
+
 <!DOCTYPE html>
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title Helyfly
-
   body
+    header.site-header
+      +logo.site-header__logo
+      .city.site-header__city Москва
+      button.site-header__nav-button
+    main.site-content
