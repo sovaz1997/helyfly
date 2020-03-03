@@ -16,9 +16,3 @@
   }
   padding-top: 142px;
 }
-
-.welcome__price {
-  @include background-image("price-bg.svg");
-  background-size: 100%;
-  margin: 0;
-}

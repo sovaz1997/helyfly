@@ -1,0 +1,10 @@
+.vertical-layout {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.horizontal-layout {
+  display: flex;
+  justify-content: space-between;
+}

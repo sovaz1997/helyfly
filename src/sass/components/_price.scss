@@ -1,0 +1,30 @@
+.price {
+  @include background-image("price-bg.svg");
+  background-size: 100%;
+  color: #ffffff;
+  width: 209px;height: 86px;
+  padding: 9px 15px;
+  box-sizing: border-box;
+
+  &::after {
+    content: "%";
+    @include set-font(30px, 30px, 800);
+    border: 1px solid white;
+    border-radius: 50%;
+    
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.price__header {
+  @include set-font(18px, 27px);
+}
+
+.price__value {
+  @include set-font(30px, 45px, 800);
+}
