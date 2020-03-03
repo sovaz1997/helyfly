@@ -1,0 +1,10 @@
+.button {
+  @include set-font(16px, 20px, 900);
+  background-color: transparent;
+  border: 3px solid #FFFFFF;
+  border-radius: 7px;
+  padding: 33px 25px;
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+}
