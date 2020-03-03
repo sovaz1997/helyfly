@@ -11,5 +11,5 @@
 }
 
 .advantage__description {
-
+  @include set-font(14px, 20px, 500);
 }

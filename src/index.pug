@@ -7,7 +7,7 @@ mixin logo(mix_class)
 mixin advantage(advantage_img, advantage_description, mix_class)
   li.advantage(class=mix_class)
     img(src=advantage_img).advantage__img
-    span.advantage__description= advantage_description
+    span.advantage__description !{advantage_description}
 
 mixin stars(count, mix_class)
   ul(class=mix_class).stars
@@ -54,16 +54,16 @@ mixin review(name, profession, photo, date, starsCount, starsDescription, messag
     img(src=photo, alt="").review__image
     |
     |
-    span.review__name= name
+    span.review__name !{name}
     |
     |
-    span.review__profession= profession
+    span.review__profession !{profession}
     |
     |
     +stars(5, "review__stars")
     |
     |
-    span.review__message= message
+    span.review__message !{message}
     |
     |
     span.date= date
@@ -85,13 +85,13 @@ mixin slider_item(number, name, description)
   li.slider-item
     |
     |
-    span.slider-item__number= number
+    span.slider-item__number !{number}
     |
     |
     span.slider-item__name <strong>#{name}</strong>
     |
     |
-    span.slider-item__description= description
+    span.slider-item__description !{description}
 
 <!DOCTYPE html>
 html(lang="en")
@@ -132,7 +132,7 @@ html(lang="en")
         ul.photosession__advantages-list
           +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "photosession__advantages-item")
           +advantage(`${imgPath}/messaging.svg`, "Русский", "photosession__advantages-item")
-          +advantage(`${imgPath}/cost.svg`, "от 850$", "photosession__advantages-item")
+          +advantage(`${imgPath}/cost.svg`, "от <strong>850$</strong>", "photosession__advantages-item")
           +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
           +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
         +many_stars("photosession__stars")
