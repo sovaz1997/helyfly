@@ -24,12 +24,12 @@ mixin shedule_item(from, to, cost, left_places, mix_class)
     span.shedule-item__info Осталось &mdash; #{left_places}
     button.button.shedule-item__chose-button Выбрать
 
-mixin many_stars(mix_class)
-  hr.line
-  img(src=`${imgPath}/many-stars.svg`).many-stars__image
-  span.many-start__description
-  +stars(5, "many-stars__stars")
-  hr.line
+mixin many_stars(description, mix_class)
+  div(class=mix_class).many-stars
+    img(src=`${imgPath}/many-stars.svg`).many-stars__image
+    div
+      span.many-stars__description !{description}
+      +stars(5, "many-stars__stars")
 
 mixin social(mix_class)
   .social
@@ -135,7 +135,7 @@ html(lang="en")
           +advantage(`${imgPath}/cost.svg`, "от <strong>850$</strong>", "photosession__advantages-item")
           +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
           +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
-        +many_stars("photosession__stars")
+        +many_stars("Более <strong>150</strong> отзывов с оценкой", "photosession__stars")
       
       section.section.photos
         h2.section__header Фотографии пакета

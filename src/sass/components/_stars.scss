@@ -1,0 +1,13 @@
+.stars {
+  display: flex;
+  @include list-reset;
+}
+
+.stars__item {
+  width: 18px;
+  height: 17px;
+
+  &--active {
+    @include background-image("star.svg");
+  }
+}
