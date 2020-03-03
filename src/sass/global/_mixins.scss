@@ -1,0 +1,9 @@
+@mixin set-font($font-size, $line-height, $font-weight: normal) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+}
+
+@mixin background-image($src) {
+  background-image: url($img-path + "/" + $src);
+}

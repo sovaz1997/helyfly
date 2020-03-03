@@ -109,11 +109,16 @@ html(lang="en")
     main.site-content
       h1.visually-hidden Hellyfly - фотосессия в вертолете
 
-      section.section
-        h2.section__header Эксклюзивная фотосессия при полете на вертолете
-        |
-        |
-        a(href="#").button.button--light Забронировать место
+      section.section.welcome
+        .content.welcome__content
+          h2.welcome__header Эксклюзивная <span class="welcome__header--orange">фотосессия</span> при полете на вертолете
+          
+          .price
+            span.price__header Стоимость:
+            span.price__value 1500₽
+          |
+          |  
+          a(href="#").button.button--light Забронировать место
       section.advantages
         h2.advantages__header Фотосессия в вертолете
         img.advantages__image(src=`${imgPath}/advantages-image.jpg`)

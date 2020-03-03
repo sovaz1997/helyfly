@@ -1,0 +1,24 @@
+.welcome {
+  @include background-image("welcome.jpg");
+  background-position: 60% center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  height: 655px;
+}
+.welcome__header {
+  @include set-font(32px, 39px, bold);
+  width: 85%;
+  box-sizing: border-box;
+  color: #ffffff;
+
+  &--orange {
+    color: #FC9B09;
+  }
+  padding-top: 142px;
+}
+
+.welcome__price {
+  @include background-image("price-bg.svg");
+  background-size: 100%;
+  margin: 0;
+}
