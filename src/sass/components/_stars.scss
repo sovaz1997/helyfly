@@ -6,6 +6,7 @@
 .stars__item {
   width: 18px;
   height: 17px;
+  margin-right: 7px;
 
   &--active {
     @include background-image("star.svg");

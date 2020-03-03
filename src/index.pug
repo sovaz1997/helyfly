@@ -75,11 +75,11 @@ mixin photographer(mix_class, isHorizontal, showmore_text)
     img(src=`${imgPath}/photographer.png`).photographer__image
     
     .photographer__wrapper
-      .photographer__name Фотограф
       .photographer__name Марина Иванова
+      .photographer__profession Фотограф
       |
       |
-      a.photographer__more= showmore_text
+      a(href="#").photographer__more !{showmore_text}
 
 mixin slider_item(number, name, description)
   li.slider-item
@@ -144,12 +144,11 @@ html(lang="en")
           - for(let i = 1; i <= 8; i++)
             li.photos__list-item
               img(src=`${imgPath}/photo-${i}.jpg`).photos__list-image
-      
       section.section.about
         h2.visually-hidden Организатор
         +photographer("about__photographer", false, "Показать больше информации о фотографе")
 
-        article.article
+        article.article.about__article
           h2.artical__header Об организаторе
           p.article__text.
             Всем привет! Я фотограф Мария! И по мимо фотосъемки я так же являюсь членом группы экспертов туристической отрасли, которые хорошо разбираются 
@@ -164,7 +163,7 @@ html(lang="en")
             и не свяжемся…
           button.show-more.article__show-more Читать еще
 
-        article.article
+        article.article.about__article
           h2.artical__header Что я предоставлю:
           p.article__text.
             Встречу вас на машине после длительного перелёта.<br>
