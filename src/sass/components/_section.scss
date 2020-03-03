@@ -1,0 +1,8 @@
+.section {
+  
+}
+
+.section__header {
+  @include set-font(28px, 34px);
+  text-align: center;
+}
