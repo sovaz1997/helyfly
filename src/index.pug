@@ -31,6 +31,43 @@ mixin many_stars(mix_class)
   +stars(5, "many-stars__stars")
   hr.line
 
+mixin social(mix_class)
+  .social
+    .social__item.social__item--vk
+      a(href="#").social__link
+    .social__item.social__item--fb
+      a(href="#").social__link
+    .social__item.social__item--insta
+      a(href="#").social__link
+
+mixin payment_options(mix_class)
+  .payment-options
+    .payment-option.payment-option--mc
+      a(href="#").payment-option__link
+    .payment-option.payment-option--visa
+      a(href="#").payment-option__link
+
+mixin review(name, profession, photo, date, starsCount, starsDescription, message)
+  .review
+    |
+    |
+    img(src=photo, alt="").review__image
+    |
+    |
+    span.review__name= name
+    |
+    |
+    span.review__profession= profession
+    |
+    |
+    +stars(5, "review__stars")
+    |
+    |
+    span.review__message= message
+    |
+    |
+    span.date= date
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -91,7 +128,7 @@ html(lang="en")
             Мы никогда не зависим 
             от субпоставщиков 
             и не свяжемся…
-          button.article__show-more Читать еще
+          button.show-more.article__show-more Читать еще
 
         article.article
           h2.artical__header Что я предоставлю:
@@ -100,7 +137,7 @@ html(lang="en")
             Качественный подбор места и локации для вашей съемки.<br>
             При необходимости всегда возможно прерваться на обед/ужин.<br>
             Более 50 фотографий на выходе с обработкой и замечательные впечатления о Дубае !
-          button.article__show-more Читать еще
+          button.show-more.article__show-more Читать еще
       
       section.photo-sessions
         h2.article__header Доступная съемка в ближайщее время
@@ -118,3 +155,39 @@ html(lang="en")
                 +shedule_item("19:00", "22:00", 850, "1 место", "photo-sessions")
 
         +many_stars("photo-sessions__stars")
+      
+      section.map
+        img.map__image
+      section.section.reviews
+        section.section__header Отзывы:
+
+        ul.reviews__list
+          li.review__item
+            +review("Валерия Антонова", "Арт-директор",
+              `${imgPath}/review-1.png`, "27 Апреля, 2019г.", 5,
+              "Супер! Я бы заказала съемку снова!",
+              "Хотим выразить огромную благодарность вашей компании! Получили море ощущений, все прошло просто замечательно. Фотки получились великолепные, отдельное спасибо фотографу!")
+          li.review__item
+            +review("Виталий Петров", "Фотограф",
+              `${imgPath}/review-2.png`, "19 Апреля, 2019г.", 5,
+              "Супер! Я бы заказала съемку снова!",
+              "Восторг! :) Очень понравилось :) Захватили последний теплый, солнечный октябрьский день :) Впечатлило всё: сам вертолет, взлет, полёт, приземление. Организация полёта отличная. Спасибо!")
+          li.review__item
+            +review("Джим Керри", "Фотограф",
+              `${imgPath}/review-3.png`, "11 Апреля, 2019г.", 5,
+              "Супер! Я бы заказала съемку снова!",
+              "Круто-круто-круто!!! Отмечали мой ДэРэ. Отлично провели время!!! Кстати закуски были вкусными и сытными))Мы с собой ничего не брали. Сами много фоткались,поэтому воспоминания обалденные!!!)) А еще нам всем напечатали по сертификату воздухоплавателя, правда некоторые ленятся за ним съездить))) Но все равно приятно. Короче, Презентстар – проверено. Оценка: пять!")
+        button.show-more.reviews__show-more Показать Все (134)
+  
+    footer.site-footer
+      section.site-footer__up
+        +logo
+        +social
+
+        .site-footer__lang-choser
+          button.site-footer__lang-choser-button
+      section.site-footer__down
+        +payment_options
+        span Тех. поддержка: 8(800)700-00-00
+        span &copy; 2018 HELYFLY. All Rights Reserved.
+
