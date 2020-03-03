@@ -37,5 +37,6 @@ gulp.task('serve', gulp.series('style', (done) => {
   gulp.watch('src/sass/**/*.{scss,sass}', gulp.parallel('style'));
   gulp.watch('src/*.pug').on('change', gulp.parallel('views'));
   gulp.watch('src/*.html').on('change', server.reload);
+  gulp.watch('src/css/*.css').on('change', server.reload);
   done();
 }));
