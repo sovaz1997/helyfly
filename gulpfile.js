@@ -6,7 +6,6 @@ var autoprefixer = require('autoprefixer');
 var server = require('browser-sync').create();
 var pug = require('gulp-pug');
 
-
 gulp.task('style', function() {
   return gulp.src('src/sass/style.scss')
   .pipe(plumber())

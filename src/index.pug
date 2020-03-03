@@ -68,6 +68,31 @@ mixin review(name, profession, photo, date, starsCount, starsDescription, messag
     |
     span.date= date
 
+mixin photographer(mix_class, isHorizontal, showmore_text)
+  .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"}`)
+    |
+    |
+    img(src=`${imgPath}/photographer.png`).photographer__image
+    
+    .photographer__wrapper
+      .photographer__name Фотограф
+      .photographer__name Марина Иванова
+      |
+      |
+      a.photographer__more= showmore_text
+
+mixin slider_item(number, name, description)
+  li.slider-item
+    |
+    |
+    span.slider-item__number= number
+    |
+    |
+    span.slider-item__name <strong>#{name}</strong>
+    |
+    |
+    span.slider-item__description= description
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -114,6 +139,7 @@ html(lang="en")
       
       section.section.about
         h2.visually-hidden Организатор
+        +photographer("about__photographer", false, "Показать больше информации о фотографе")
 
         article.article
           h2.artical__header Об организаторе
@@ -158,6 +184,14 @@ html(lang="en")
       
       section.map
         img.map__image
+
+        ul
+          +slider_item("1", "Где встречаемся?", "Москва")
+          +slider_item("2", "Время съемки", "3 часа")
+          +slider_item("3", "Мест осталось", "2 места")
+        
+        +photographer("about__photographer", true, "Показать больше информации")
+
       section.section.reviews
         section.section__header Отзывы:
 
@@ -190,4 +224,3 @@ html(lang="en")
         +payment_options
         span Тех. поддержка: 8(800)700-00-00
         span &copy; 2018 HELYFLY. All Rights Reserved.
-

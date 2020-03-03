@@ -21,5 +21,7 @@
     "gulp-sass": "^4.0.2",
     "pug": "^2.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "pug-error": "^1.3.3"
+  }
 }
