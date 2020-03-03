@@ -4,6 +4,12 @@
   font-weight: $font-weight;
 }
 
+@mixin block-size($width, $height) {
+  width: $width;
+  height: $height;
+  box-sizing: border-box;
+}
+
 @mixin background-image($src) {
   background-image: url($img-path + "/" + $src);
 }

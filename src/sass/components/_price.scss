@@ -1,19 +1,19 @@
 .price {
   @include background-image("price-bg.svg");
+  @include block-size(209px, 86px);
+
   background-size: 100%;
   color: #ffffff;
-  width: 209px;height: 86px;
   padding: 9px 15px;
-  box-sizing: border-box;
 
   &::after {
-    content: "%";
     @include set-font(30px, 30px, 800);
+    @include block-size(47px, 47px);
+
+    content: "%";
+    
     border: 1px solid white;
     border-radius: 50%;
-    
-    width: 47px;
-    height: 47px;
 
     display: flex;
     justify-content: center;
