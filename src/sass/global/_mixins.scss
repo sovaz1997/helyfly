@@ -13,3 +13,9 @@
 @mixin background-image($src) {
   background-image: url($img-path + "/" + $src);
 }
+
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

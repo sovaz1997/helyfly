@@ -120,7 +120,7 @@ html(lang="en")
           |
           |  
           a(href="#").button.button--light.welcome__button Забронировать место
-      section.section.content
+      section.section.content.photosession
         h2.section__header Фотосессия в вертолете
         img.section__image(src=`${imgPath}/advantages-image.jpg`)
 
@@ -129,13 +129,13 @@ html(lang="en")
           новые ощущения! А наш замечательный фотограф запечатлит
           лучшие моменты
         
-        ul.advantages
-          +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "advantages__item").advantages__item
-          +advantage(`${imgPath}/messaging.svg`, "Русский", "advantages__item").advantages__item
-          +advantage(`${imgPath}/cost.svg`, "от 850$", "advantages__item").advantages__item
-          +advantage(`${imgPath}/location.svg`, "Дубаи", "advantages__item").advantages__item
-          +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "advantages__item").advantages__item
-        +many_stars("advantages__stars")
+        ul.photosession__advantages-list
+          +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "photosession__advantages-item")
+          +advantage(`${imgPath}/messaging.svg`, "Русский", "photosession__advantages-item")
+          +advantage(`${imgPath}/cost.svg`, "от 850$", "photosession__advantages-item")
+          +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
+          +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
+        +many_stars("photosession__stars")
       
       section.section.photos
         h2.section__header Фотографии пакета
