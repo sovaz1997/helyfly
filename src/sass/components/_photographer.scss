@@ -1,5 +1,17 @@
 .photographer {
   display: flex;
+  flex-shrink: 0;
+
+  .photographer__profession {
+    @include set-font(14px, 21px, 500);
+    margin-bottom: 7px;
+  }
+
+  .photographer__more {
+    @include set-font(14px, 21px, 500);
+    text-decoration: none;
+    color: $color-text-link;
+  }
 
   &--vertical {
     flex-direction: column;
@@ -19,16 +31,26 @@
       @include set-font(18px, 22px, 500);
       margin-bottom: 7px;
     }
+  }
 
-    .photographer__profession {
-      @include set-font(14px, 21px, 500);
-      margin-bottom: 7px;
+  &--horizontal {
+    .photographer__image {
+      width: 84px;
+      height: 84px;
+      margin-right: 18px;
     }
 
-    .photographer__more {
-      @include set-font(14px, 21px, 500);
-      text-decoration: none;
-      color: $color-text-link;
+    .photographer__name {
+      @include set-font(16px, 20px, 500);
+      margin-bottom: 7px;
+    }
+  }
+
+  &--mini {
+    .photographer__image {
+      width: 67px;
+      height: 67px;
+      margin-right: 11px;
     }
   }
 }

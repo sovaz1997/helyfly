@@ -68,8 +68,8 @@ mixin review(name, profession, photo, date, starsCount, starsDescription, messag
     |
     span.date= date
 
-mixin photographer(mix_class, isHorizontal, showmore_text)
-  .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"}`)
+mixin photographer(mix_class, isHorizontal, showmore_text, isMini)
+  .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"} ${isMini ? "photographer--mini": ""}`)
     |
     |
     img(src=`${imgPath}/photographer.png`).photographer__image
@@ -194,12 +194,14 @@ html(lang="en")
       section.map
         img.map__image
 
-        ul.slider
-          +slider_item("1", "Где встречаемся?", "Москва")
-          +slider_item("2", "Время съемки", "3 часа")
-          +slider_item("3", "Мест осталось", "2 места")
-        
-        +photographer("about__photographer", true, "Показать больше информации")
+        div.content
+          div.map__inner
+            ul.slider
+              +slider_item("1", "Где встречаемся?", "Москва")
+              +slider_item("2", "Время съемки", "3 часа")
+              +slider_item("3", "Мест осталось", "2 места")
+            
+            +photographer("map__photographer", true, "Показать больше информации о фотографе", true)
 
       section.section.reviews
         section.section__header Отзывы:
