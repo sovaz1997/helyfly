@@ -11,18 +11,12 @@
   align-items: center;
 
   &::after {
-    position: relative;
-    top: 1px;
-    content: "";
-    display: block;
-    @include block-size(11px, 6px);
-    @include background-image("ico-read-more.svg");
-    margin-left: 9px;
+    @include arrow-down;
   }
 
   &--right {
     &::after {
-      transform: rotate(-90deg);
+      @include arrow-right;
     }
   }
 }

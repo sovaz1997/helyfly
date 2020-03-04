@@ -2,4 +2,38 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 23px;
+}
+
+.site-footer__support, .site-footer__copyright {
+  @include set-font(14px, 17px);
+
+  display: block;
+  text-align: center;
+  color: #B3B3B3;
+}
+
+.site-footer__support {
+  margin-bottom: 10px;
+}
+
+.site-footer_lang-pay {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 26px;
+  margin-bottom: 24px;
+}
+
+.site-footer__lang-choser {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    @include arrow-down;
+    padding-right: 6px;
+  }
 }
