@@ -1,4 +1,21 @@
-.site-header__content {
+.site-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.site-header__city {
+  color: #5286EC;
+  @include set-font(14px, 17px);
+}
+
+.site-header__nav-button {
+  border: none;
+  @include background-image("user-nav.png");
+  background-color: transparent;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  padding: 0;
 }

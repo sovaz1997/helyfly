@@ -6,6 +6,7 @@
   height: 655px;
 }
 .welcome__header {
+  margin: 0;
   @include set-font(32px, 39px, bold);
   width: 85%;
   box-sizing: border-box;
