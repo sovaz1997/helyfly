@@ -1,0 +1,28 @@
+.slider-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-item__number {
+  @include block-size(66px, 66px);
+  @include set-font(30px, 44px, bold);
+  color: #ffffff;
+
+  background-color: #FC9B09;
+  border-radius: 50%;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.slider-item__name {
+  @include set-font(16px, 23px, 500);
+  margin-bottom: 10px;
+}
+
+.slider-item__description {
+  @include set-font(14px, 20px);
+}
