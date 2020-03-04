@@ -1,0 +1,52 @@
+.review {
+  display: flex;
+  flex-direction: column;
+}
+
+.review__author {
+  display: flex;
+}
+
+.review__author-image {
+  width: 84px;
+  height: 84px;
+  margin-right: 18px;
+}
+
+.review__author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review__author-name {
+  @include set-font(16px, 20px, 500);
+}
+
+.review__author-profession {
+  @include set-font(14px, 21px, 500);
+}
+
+.review__message-header {
+  @include set-font(14px, 21px);
+  color: #B3B3B3;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    @include background-image("check.svg");
+    width: 17px;
+    height: 15px;
+    margin-right: 5px;
+  }
+}
+
+.review__message {
+  @include set-font(14px, 21px, 500);
+  margin-bottom: 20px;
+}
+
+.review__date {
+  @include set-font(14px, 21px);
+  color: #B3B3B3;
+}

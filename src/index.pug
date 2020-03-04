@@ -47,26 +47,6 @@ mixin payment_options(mix_class)
     .payment-option.payment-option--visa
       a(href="#").payment-option__link
 
-mixin review(name, profession, photo, date, starsCount, starsDescription, message)
-  .review
-    |
-    |
-    img(src=photo, alt="").review__image
-    |
-    |
-    span.review__name !{name}
-    |
-    |
-    span.review__profession !{profession}
-    |
-    |
-    +stars(5, "review__stars")
-    |
-    |
-    span.review__message !{message}
-    |
-    |
-    span.date= date
 
 mixin photographer(mix_class, isHorizontal, showmore_text, isMini)
   .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"} ${isMini ? "photographer--mini": ""}`)
@@ -80,6 +60,29 @@ mixin photographer(mix_class, isHorizontal, showmore_text, isMini)
       |
       |
       a(href="#").photographer__more !{showmore_text}
+
+mixin review(name, profession, photo, date, starsCount, message_header, message)
+  .review
+    |
+    .review__author
+      img(src=photo, alt="").review__author-image
+      .review__author-info
+        span.review__author-name !{name}
+        |
+        |
+        span.review__author-profession !{profession}
+        |
+        |
+        +stars(5, "review__stars")
+    
+    
+    h4.review__message-header !{message_header}
+    |
+    |
+    span.review__message !{message}
+    |
+    |
+    span.review__date !{date}
 
 mixin slider_item(number, name, description)
   li.slider-item
@@ -203,21 +206,21 @@ html(lang="en")
             
             +photographer("map__photographer", true, "Показать больше информации о фотографе", true)
 
-      section.section.reviews
+      section.section.reviews.content
         section.section__header Отзывы:
 
         ul.reviews__list
-          li.review__item
+          li.reviews__item
             +review("Валерия Антонова", "Арт-директор",
               `${imgPath}/review-1.png`, "27 Апреля, 2019г.", 5,
               "Супер! Я бы заказала съемку снова!",
               "Хотим выразить огромную благодарность вашей компании! Получили море ощущений, все прошло просто замечательно. Фотки получились великолепные, отдельное спасибо фотографу!")
-          li.review__item
+          li.reviews__item
             +review("Виталий Петров", "Фотограф",
               `${imgPath}/review-2.png`, "19 Апреля, 2019г.", 5,
               "Супер! Я бы заказала съемку снова!",
               "Восторг! :) Очень понравилось :) Захватили последний теплый, солнечный октябрьский день :) Впечатлило всё: сам вертолет, взлет, полёт, приземление. Организация полёта отличная. Спасибо!")
-          li.review__item
+          li.reviews__item
             +review("Джим Керри", "Фотограф",
               `${imgPath}/review-3.png`, "11 Апреля, 2019г.", 5,
               "Супер! Я бы заказала съемку снова!",
