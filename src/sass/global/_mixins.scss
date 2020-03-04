@@ -12,6 +12,7 @@
 
 @mixin background-image($src) {
   background-image: url($img-path + "/" + $src);
+  background-repeat: no-repeat;
 }
 
 @mixin list-reset {

@@ -49,6 +49,7 @@
   &--mini {
     .photographer__image {
       @include block-size(67px, 67px);
+      min-width: 67px;
       margin-right: 11px;
     }
   }

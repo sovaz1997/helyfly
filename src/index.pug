@@ -193,17 +193,25 @@ html(lang="en")
         h2.visually-hidden Карта
         img(src="#", alt="").map__image
 
-        div.content
-          div.map__inner
-            ul.slider
-              +slider_item("1", "Где встречаемся?", "Москва", true)
-              +slider_item("2", "Время съемки", "3 часа", false)
-              +slider_item("3", "Мест осталось", "2 места", false)
-            
+        .content
+          .map__inner
+            .slider
+              button.slider__button.slider__button--left
+              ul.slider__content
+                +slider_item("1", "Где встречаемся?", "Москва", true)
+                +slider_item("2", "Время съемки", "3 часа", false)
+                +slider_item("3", "Мест осталось", "2 места", false)
+              button.slider__button.slider__button--right
+
+              div.slider__selectors
+                button.slider__selector.slider__selector--active
+                button.slider__selector
+                button.slider__selector
+              
             +photographer("map__photographer", true, "Показать больше информации о фотографе", true)
 
       section.section.reviews.content
-        h2.section__header Отзывы:
+        h2.section__header Отзывы
 
         ul.reviews__list
           li.reviews__item
