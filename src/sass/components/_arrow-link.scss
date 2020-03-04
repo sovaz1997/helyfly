@@ -1,4 +1,4 @@
-.show-more {
+.arrow-link {
   font-family: inherit;
   color: $color-text-link;
   border: none;
@@ -18,5 +18,11 @@
     @include block-size(11px, 6px);
     @include background-image("ico-read-more.svg");
     margin-left: 9px;
+  }
+
+  &--right {
+    &::after {
+      transform: rotate(-90deg);
+    }
   }
 }
