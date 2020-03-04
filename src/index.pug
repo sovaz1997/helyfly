@@ -92,6 +92,21 @@ mixin slider_item(number, name, description, isActive)
     |
     span.slider-item__description !{description}
 
+mixin input(name, value, type, placeholder, required, id)
+  input(type=type, name=name, value=value, id=id, placeholder=placeholder, required=required ? "true" : "false")
+
+mixin label_input(mix_class, name, value, label, type, placeholder, required)
+  - const id = `input-${name}`
+  div(class=mix_class)
+    label(for=id, class=`label ${required ? 'label--required' : ''}`) !{label}
+    +input(name, value, type, placeholder, required, id)
+
+mixin card_input(name, label, required)
+  +input(name + '-number', "", "numer", "Номер карты", required, id)
+  +input(name + '-date', "", "date", "Срок действия", required, id)
+  +input(name + '-cvv', "", "number", "CVV", required, id)
+
+
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -244,3 +259,10 @@ html(lang="en")
           button.site-footer__lang-choser-button
         span Тех. поддержка: 8(800)700-00-00
         span &copy; 2018 HELYFLY. All Rights Reserved.
+    section.modal
+      h2.modal__header Бронирование
+      form.form
+        +label_input("form__label-input", "email", "", "Email", "email", "Электронная почта", true)
+        +label_input("form__label-input", "first-name", "Иван", "Имя", "text", "", true)
+        +label_input("form__label-input", "last-name", "Громов", "Фамилия", "text", "", true)
+
