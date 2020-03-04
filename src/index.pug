@@ -1,12 +1,12 @@
 - const imgPath = './assets/img'
 
 mixin logo(mix_class)
-  img(src=`${imgPath}/logo.svg`, class=mix_class).logo
+  img(src=`${imgPath}/logo.svg`, class=mix_class, alt="").logo
 
 
 mixin advantage(advantage_img, advantage_description, mix_class)
   li.advantage(class=mix_class)
-    img(src=advantage_img).advantage__img
+    img(src=advantage_img, alt="").advantage__img
     span.advantage__description !{advantage_description}
 
 mixin stars(count, mix_class)
@@ -26,33 +26,29 @@ mixin shedule_item(from, to, cost, left_places, mix_class)
 
 mixin many_stars(description, mix_class)
   div(class=mix_class).many-stars
-    img(src=`${imgPath}/many-stars.svg`).many-stars__image
+    img(src=`${imgPath}/many-stars.svg`, alt="").many-stars__image
     div
       span.many-stars__description !{description}
       +stars(5, "many-stars__stars")
 
 mixin social(mix_class)
   .social
-    .social__item.social__item--vk
-      a(href="#").social__link
-    .social__item.social__item--fb
-      a(href="#").social__link
-    .social__item.social__item--insta
-      a(href="#").social__link
+    a(href="#").social__item.social__item--vk
+    a(href="#").social__item.social__item--fb
+    a(href="#").social__item.social__item--insta
 
 mixin payment_options(mix_class)
   .payment-options
-    .payment-option.payment-option--mc
-      a(href="#").payment-option__link
-    .payment-option.payment-option--visa
-      a(href="#").payment-option__link
+    a(href="#").payment-options__item.payment-options__item--mc
+    a(href="#").payment-options__item.payment-options__item--visa
+    a(href="#").payment-options__item.payment-options__item--pp
 
 
 mixin photographer(mix_class, isHorizontal, showmore_text, isMini)
   .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"} ${isMini ? "photographer--mini": ""}`)
     |
     |
-    img(src=`${imgPath}/photographer.png`).photographer__image
+    img(src=`${imgPath}/photographer.png`, alt="").photographer__image
     
     .photographer__wrapper
       .photographer__name Марина Иванова
@@ -125,7 +121,7 @@ html(lang="en")
           button.button.button--light.welcome__button Забронировать место
       section.section.content.photosession
         h2.section__header Фотосессия в вертолете
-        img.section__image(src=`${imgPath}/advantages-image.jpg`)
+        img.section__image(src=`${imgPath}/advantages-image.jpg`, alt="")
 
         p.section__description.
           Полет на вертолете это прекрасная возможность получить
@@ -146,7 +142,7 @@ html(lang="en")
         ul.photos__list
           - for(let i = 1; i <= 8; i++)
             li.photos__list-item
-              img(src=`${imgPath}/photo-${i}.jpg`).photos__list-image
+              img(src=`${imgPath}/photo-${i}.jpg`, alt="").photos__list-image
       section.section.about.content
         h2.visually-hidden Организатор
         +photographer("about__photographer", false, "Показать больше информации о фотографе")
@@ -189,13 +185,14 @@ html(lang="en")
             tr
               td
                 +shedule_item("19:00", "22:00", 850, "1 место", "photo-sessions")
-          tfooter
+          tfoot
             tr
               td.photo-sessions__schedule-stars
                 +many_stars("Более <strong>150</strong> отзывов с оценкой")
       
       section.map
-        img.map__image
+        h2.visually-hidden Карта
+        img(src="#", alt="").map__image
 
         div.content
           div.map__inner
@@ -207,7 +204,7 @@ html(lang="en")
             +photographer("map__photographer", true, "Показать больше информации о фотографе", true)
 
       section.section.reviews.content
-        section.section__header Отзывы:
+        h2.section__header Отзывы:
 
         ul.reviews__list
           li.reviews__item
@@ -228,13 +225,15 @@ html(lang="en")
         button.arrow-link.arrow-link--right.reviews__show-more Показать Все (134)
   
     footer.site-footer
-      section.site-footer__up
+      section.site-footer__up.content
+        h2.visually-hidden Верхний футер
         +logo
         +social
-
+      .splitter
+      section.site-footer__down.content
+        h2.visually-hidden Нижний футер
+        +payment_options
         .site-footer__lang-choser
           button.site-footer__lang-choser-button
-      section.site-footer__down
-        +payment_options
         span Тех. поддержка: 8(800)700-00-00
         span &copy; 2018 HELYFLY. All Rights Reserved.
