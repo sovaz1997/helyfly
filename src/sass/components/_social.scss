@@ -1,0 +1,27 @@
+.social {
+  display: flex;
+}
+
+.social__item {
+  & + & {
+    margin-left: 30px;
+  }
+
+  width: 26px;
+  height: 26px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--vk {
+    @include background-image("ico-vk.svg");
+  }
+
+  &--fb {
+    @include background-image("ico-fb.svg");
+  }
+
+  &--insta {
+    @include background-image("ico-insta.svg");
+  }
+}

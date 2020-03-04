@@ -1,0 +1,28 @@
+.payment-options {
+  display: flex;
+}
+
+.payment-options__item {
+  & + & {
+    margin-left: 17px;
+  }
+
+  width: 35px;
+  height: 23px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+
+  &--mc {
+    @include background-image("ico-mc.png");
+  }
+
+  &--visa {
+    @include background-image("ico-visa.png");
+  }
+
+  &--pp {
+    @include background-image("ico-pp.png");
+  }
+}
