@@ -80,8 +80,8 @@ mixin review(name, profession, photo, date, starsCount, message_header, message)
     |
     span.review__date !{date}
 
-mixin slider_item(number, name, description)
-  li.slider-item
+mixin slider_item(number, name, description, isActive)
+  li(class= isActive ? "slider-item--active" : "").slider-item
     |
     |
     span.slider-item__number !{number}
@@ -196,9 +196,9 @@ html(lang="en")
         div.content
           div.map__inner
             ul.slider
-              +slider_item("1", "Где встречаемся?", "Москва")
-              +slider_item("2", "Время съемки", "3 часа")
-              +slider_item("3", "Мест осталось", "2 места")
+              +slider_item("1", "Где встречаемся?", "Москва", true)
+              +slider_item("2", "Время съемки", "3 часа", false)
+              +slider_item("3", "Мест осталось", "2 места", false)
             
             +photographer("map__photographer", true, "Показать больше информации о фотографе", true)
 
