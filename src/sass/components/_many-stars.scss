@@ -1,3 +1,11 @@
 .many-stars {
   display: flex;
 }
+
+.many-stars__image {
+  margin-right: 15px;
+}
+
+.many-stars__description {
+  @include set-font(14px, 20px);
+}

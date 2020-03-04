@@ -1,0 +1,9 @@
+.photos__list {
+  display: flex;
+  overflow: scroll;
+  @include list-reset;
+}
+
+.photos__list-item {
+  margin-right: 15px;
+}

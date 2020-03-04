@@ -1,0 +1,10 @@
+.shedule-item {
+  display: flex;
+  flex-direction: column;
+  height: 160px;
+  justify-content: space-between;
+}
+
+.shedule-item__button {
+  width: 129px;
+}

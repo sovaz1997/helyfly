@@ -1,12 +1,24 @@
 .button {
   @include set-font(16px, 20px, 900);
   background-color: transparent;
-  border: 3px solid #FFFFFF;
   border-radius: 7px;
-  padding: 33px 25px;
-  color: #ffffff;
   text-decoration: none;
   display: block;
   text-align: center;
   display: inline-block;
+
+  border: 3px solid #FC9B09;
+  color: #FC9B09;
+  box-sizing: border-box;
+  padding: 33px 25px;
+  
+  &--light {
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+  }
+
+  &--mini {
+    padding: 16px 32px;
+    @include set-font(14px, 17px, 500);
+  }
 }

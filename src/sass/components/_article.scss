@@ -1,0 +1,13 @@
+.artical__header {
+  @include set-font(18px, 26px, 500);
+  margin: 0 0 14px 0;
+}
+
+.article__text {
+  @include set-font(16px, 24px);
+  margin: 0;
+}
+
+.article__show-more {
+  margin-top: 25px;
+}

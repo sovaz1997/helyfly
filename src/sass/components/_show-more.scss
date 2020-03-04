@@ -1,0 +1,22 @@
+.show-more {
+  font-family: inherit;
+  color: $color-text-link;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include set-font(16px, 23px, 500);
+  padding: 0;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    position: relative;
+    top: 1px;
+    content: "";
+    display: block;
+    @include block-size(11px, 6px);
+    @include background-image("ico-read-more.svg");
+    margin-left: 9px;
+  }
+}

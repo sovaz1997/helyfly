@@ -22,7 +22,7 @@ mixin shedule_item(from, to, cost, left_places, mix_class)
     span.shedule-item__info #{from} - #{to}
     span.shedule-item__info <strong>#{cost}$</strong>
     span.shedule-item__info Осталось &mdash; #{left_places}
-    button.button.shedule-item__chose-button Выбрать
+    button.button.button--mini.shedule-item__button Выбрать
 
 mixin many_stars(description, mix_class)
   div(class=mix_class).many-stars
@@ -119,7 +119,7 @@ html(lang="en")
               span.price__value 1500₽
           |
           |  
-          a(href="#").button.button--light.welcome__button Забронировать место
+          button.button.button--light.welcome__button Забронировать место
       section.section.content.photosession
         h2.section__header Фотосессия в вертолете
         img.section__image(src=`${imgPath}/advantages-image.jpg`)
@@ -138,13 +138,13 @@ html(lang="en")
         +many_stars("Более <strong>150</strong> отзывов с оценкой", "photosession__stars")
       
       section.section.photos
-        h2.section__header Фотографии пакета
+        h2.section__header.content Фотографии пакета
 
         ul.photos__list
           - for(let i = 1; i <= 8; i++)
             li.photos__list-item
               img(src=`${imgPath}/photo-${i}.jpg`).photos__list-image
-      section.section.about
+      section.section.about.content
         h2.visually-hidden Организатор
         +photographer("about__photographer", false, "Показать больше информации о фотографе")
 
@@ -172,13 +172,13 @@ html(lang="en")
             Более 50 фотографий на выходе с обработкой и замечательные впечатления о Дубае !
           button.show-more.article__show-more Читать еще
       
-      section.photo-sessions
-        h2.article__header Доступная съемка в ближайщее время
+      section.section.photo-sessions.content
+        h2.section__header Доступная съемка в ближайщее время
 
-        table.article__schedule
+        table.photo-sessions__schedule
           thead
             tr
-              td Пятница, <strong>14</strong> сентября
+              th.photo-sessions__schedule-header Пятница, <strong>14</strong> сентября
           tbody
             tr
               td
@@ -186,8 +186,10 @@ html(lang="en")
             tr
               td
                 +shedule_item("19:00", "22:00", 850, "1 место", "photo-sessions")
-
-        +many_stars("photo-sessions__stars")
+          tfooter
+            tr
+              td.photo-sessions__schedule-stars
+                +many_stars("Более <strong>150</strong> отзывов с оценкой")
       
       section.map
         img.map__image
