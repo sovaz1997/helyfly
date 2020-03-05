@@ -156,12 +156,14 @@ html(lang="en")
           .splitter
         
       section.section.photos
-        h2.section__header.content Фотографии пакета
+        .content
+          h2.section__header.content Фотографии пакета
 
-        ul.photos__list
-          - for(let i = 1; i <= 8; i++)
-            li.photos__list-item
-              img(src=`${imgPath}/photo-${i}.jpg`, alt="").photos__list-image
+        .content.content--desktop
+          ul.photos__list
+            - for(let i = 1; i <= 8; i++)
+              li.photos__list-item
+                img(src=`${imgPath}/photo-${i}.jpg`, alt="").photos__list-image
       section.section.about.content
         h2.visually-hidden Организатор
         .about__heart

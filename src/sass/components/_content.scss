@@ -3,4 +3,18 @@
   max-width: $max-content-width;
   box-sizing: border-box;
   margin: 0 auto;
+
+  
+  &--desktop {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .content {
+    box-sizing: content-box;
+    &--desktop {
+      padding: 0 15px;
+    }
+  }
 }

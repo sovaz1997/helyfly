@@ -6,7 +6,6 @@
 .section__header {
   @include set-font(28px, 34px);
   text-align: center;
-  padding: 5px 0;
   margin: 0;
 }
 
@@ -19,6 +18,6 @@
 @media only screen and (min-width: $tablet-width) {
   .section__header {
     @include set-font(20px, 29px);
-    text-align: left; 
+    text-align: left;
   }
 }
