@@ -106,7 +106,6 @@ mixin card_input(name, label, required)
   +input(name + '-date', "", "date", "Срок действия", required, id)
   +input(name + '-cvv', "", "number", "CVV", required, id)
 
-
 <!DOCTYPE html>
 html(lang="en")
   head
@@ -136,7 +135,7 @@ html(lang="en")
           button.button.button--light.welcome__button Забронировать место
       section.section.content.photosession
         h2.section__header Фотосессия в вертолете
-        img.section__image(src=`${imgPath}/advantages-image.jpg`, alt="")
+        img.photosession__image(src=`${imgPath}/advantages-image.jpg`, alt="")
 
         p.section__description.
           Полет на вертолете это прекрасная возможность получить
@@ -163,6 +162,7 @@ html(lang="en")
               img(src=`${imgPath}/photo-${i}.jpg`, alt="").photos__list-image
       section.section.about.content
         h2.visually-hidden Организатор
+        .about__heart
         +photographer("about__photographer", false, "Показать больше информации о фотографе")
 
         article.article.about__article

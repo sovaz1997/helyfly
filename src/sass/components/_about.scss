@@ -1,5 +1,6 @@
 .about {
   padding-top: 63px;
+  position: relative;
 }
 
 .about__article {
@@ -8,4 +9,12 @@
 
 .about__photographer {
   margin-bottom: 25px;
+}
+
+.about__heart {
+  @include block-size(31px, 27px);
+  @include background-image("heart.svg");
+  position: absolute;
+  right: 15px;
+  top: 40px;
 }

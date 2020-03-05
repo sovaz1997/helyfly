@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 160px;
   justify-content: space-between;
+  @include set-font(18px, 26px);
 }
 
 .shedule-item__button {

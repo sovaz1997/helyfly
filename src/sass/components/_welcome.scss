@@ -4,6 +4,7 @@
   background-size: auto 100%;
   background-repeat: no-repeat;
   height: 655px;
+  box-sizing: border-box;
 }
 .welcome__header {
   margin: 0;
@@ -15,12 +16,13 @@
   &--orange {
     color: #FC9B09;
   }
-  padding-top: 142px;
+  padding-top: 102px;
   margin-bottom: 36px;
 }
 
 .welcome__button {
   margin-top: 14px;
+  width: 275px;
 }
 
 .section__image {
