@@ -10,6 +10,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
+  cursor: pointer;
   
   &--left {
     @include background-image("arrow-left.svg");

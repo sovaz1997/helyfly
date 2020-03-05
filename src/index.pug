@@ -134,25 +134,27 @@ html(lang="en")
           |  
           button.button.button--light.welcome__button Забронировать место
       section.section.content.photosession
-        h2.section__header Фотосессия в вертолете
-        img.photosession__image(src=`${imgPath}/advantages-image.jpg`, alt="")
+        .photosession__inner
+          h2.section__header.photosession__header Фотосессия в вертолете
 
-        p.section__description.
-          Полет на вертолете это прекрасная возможность получить
-          новые ощущения! А наш замечательный фотограф запечатлит
-          лучшие моменты
+          img.photosession__image(src=`${imgPath}/advantages-image.jpg`, alt="")
+
+          p.section__description.photosession__description.
+            Полет на вертолете это прекрасная возможность получить
+            новые ощущения! А наш замечательный фотограф запечатлит
+            лучшие моменты
+          
+          ul.photosession__advantages-list
+            +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "photosession__advantages-item")
+            +advantage(`${imgPath}/messaging.svg`, "Русский", "photosession__advantages-item")
+            +advantage(`${imgPath}/cost.svg`, "от <strong>850$</strong>", "photosession__advantages-item")
+            +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
+            +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
+          
+          .splitter
+          +many_stars("Более <strong>150</strong> отзывов с оценкой", "photosession__stars")
+          .splitter
         
-        ul.photosession__advantages-list
-          +advantage(`${imgPath}/clock.svg`, "3 часа съемки", "photosession__advantages-item")
-          +advantage(`${imgPath}/messaging.svg`, "Русский", "photosession__advantages-item")
-          +advantage(`${imgPath}/cost.svg`, "от <strong>850$</strong>", "photosession__advantages-item")
-          +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
-          +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
-        
-        .splitter
-        +many_stars("Более <strong>150</strong> отзывов с оценкой", "photosession__stars")
-        .splitter
-      
       section.section.photos
         h2.section__header.content Фотографии пакета
 
