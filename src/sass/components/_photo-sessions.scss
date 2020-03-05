@@ -1,6 +1,8 @@
 .photo-sessions__schedule {
   border: 1px solid #C7C7C7;
   border-collapse: collapse;
+  width: 100%;
+  max-width: 770px;
 
   td, th {
     border: 0.5px solid #C7C7C7;
