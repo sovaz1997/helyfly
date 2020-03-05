@@ -2,10 +2,6 @@
   padding-top: 45px;
 }
 
-.map__script {
-  padding-bottom: 52px;
-}
-
 .map__inner {
   border: 1px solid #C7C7C7;
   display: flex;
@@ -16,4 +12,9 @@
 
 .map__slider {
   margin-bottom: 40px;
+}
+
+.map__script {
+  width: 100%;
+  padding-bottom: 52px;
 }

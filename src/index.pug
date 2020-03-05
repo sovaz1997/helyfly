@@ -116,8 +116,9 @@ html(lang="en")
     link(href="./css/style.css", rel="stylesheet")
   body
     header.site-header.content
-      +logo('site-header__logo')
-      .site-header__city Москва
+      .horizontal-layout
+        +logo('site-header__logo')
+        .site-header__city Москва
       button.site-header__nav-button
     main.site-content
       h1.visually-hidden Hellyfly - фотосессия в вертолете
@@ -148,7 +149,10 @@ html(lang="en")
           +advantage(`${imgPath}/cost.svg`, "от <strong>850$</strong>", "photosession__advantages-item")
           +advantage(`${imgPath}/location.svg`, "Дубаи", "photosession__advantages-item")
           +advantage(`${imgPath}/camera.svg`, "Более 50 фотографий", "photosession__advantages-item")
+        
+        .splitter
         +many_stars("Более <strong>150</strong> отзывов с оценкой", "photosession__stars")
+        .splitter
       
       section.section.photos
         h2.section__header.content Фотографии пакета

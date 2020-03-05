@@ -2,17 +2,6 @@
   display: flex;
   flex-shrink: 0;
 
-  .photographer__profession {
-    @include set-font(14px, 21px, 500);
-    margin-bottom: 7px;
-  }
-
-  .photographer__more {
-    @include set-font(14px, 21px, 500);
-    text-decoration: none;
-    color: $color-text-link;
-  }
-
   &--vertical {
     flex-direction: column;
     align-items: center;
@@ -53,4 +42,17 @@
       margin-right: 11px;
     }
   }
+}
+
+.photographer__profession {
+  @include set-font(14px, 21px, 500);
+  margin-bottom: 7px;
+}
+
+.photographer__more {
+  @include set-font(14px, 21px, 500);
+  text-decoration: none;
+  color: $color-text-link;
+  width: 100%;
+  display: block;
 }

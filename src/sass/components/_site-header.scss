@@ -5,6 +5,10 @@
   height: 60px;
 }
 
+.site-header__logo {
+  margin-right: 45px;
+}
+
 .site-header__city {
   color: #5286EC;
   @include set-font(14px, 17px);

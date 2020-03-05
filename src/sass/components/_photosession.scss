@@ -1,7 +1,16 @@
 .photosession__advantages-list {
   @include list-reset;
+  margin-bottom: 30px;
 }
 
 .photosession__advantages-item {
   padding-bottom: 16px;
+}
+
+.photosession__stars {
+  padding: 14px 0;
+}
+
+.photosession__splitter {
+  
 }
