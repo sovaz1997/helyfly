@@ -268,7 +268,10 @@ html(lang="en")
     section.modal
       h2.modal__header Бронирование
       form.form
+        +label_input("form__label-input", "date", "2019-09-14", "Дата", "date", "", true)
         +label_input("form__label-input", "email", "", "Email", "email", "Электронная почта", true)
         +label_input("form__label-input", "first-name", "Иван", "Имя", "text", "", true)
         +label_input("form__label-input", "last-name", "Громов", "Фамилия", "text", "", true)
+        +label_input("form__label-input", "phone", "", "Телефон", "text", "+7 (905) 184-81-40", true)
+        +card_input("card", "Данные карты", true)
 
