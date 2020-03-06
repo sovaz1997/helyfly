@@ -24,3 +24,9 @@
     @include set-font(13px, 19px); 
   }
 }
+
+@media only screen and (min-width: $tablet-width) {
+  .photo-sessions__header {
+    @include set-font(20px, 29px, 500);
+  }
+}

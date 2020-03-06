@@ -87,12 +87,11 @@ mixin slider_item(number, name, description, isActive)
     |
     |
     span.slider-item__number !{number}
-    |
-    |
-    span.slider-item__name <strong>#{name}</strong>
-    |
-    |
-    span.slider-item__description !{description}
+    
+    
+    .slider-item__text
+      span.slider-item__name !{name}
+      span.slider-item__description !{description}
 
 mixin input(name, value, type, placeholder, required, id)
   input(type=type, name=name, value=value, id=id, placeholder=placeholder, required=required ? "true" : "false")
@@ -195,7 +194,7 @@ html(lang="en")
           button.arrow-link.arrow-link--right.article__show-more Читать еще
       
       section.section.photo-sessions.content
-        h2.section__header Доступная съемка в ближайщее время
+        h2.section__header.photo-sessions__header Доступная съемка в ближайщее время
 
         table.photo-sessions__schedule
           thead

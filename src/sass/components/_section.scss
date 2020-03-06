@@ -19,5 +19,7 @@
   .section__header {
     @include set-font(20px, 29px);
     text-align: left;
+    width: 288px;
+    margin-bottom: 30px;
   }
 }

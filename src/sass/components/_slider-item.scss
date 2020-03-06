@@ -30,3 +30,38 @@
 .slider-item__description {
   @include set-font(14px, 20px);
 }
+
+.slider-item__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .slider-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 34px;
+  }
+
+  .slider-item__number {
+    margin-bottom: 0;
+  }
+
+  .slider-item__text {
+    align-items: flex-start;
+  }
+
+  .slider-item__number {
+    margin-right: 18px;
+  }
+
+  .slider-item__name {
+    @include set-font(18px, 27px, 500);
+  }
+  
+  .slider-item__description {
+    @include set-font(18px, 26px);
+  }
+}
