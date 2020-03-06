@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  flex-wrap: wrap;
 }
 
 .slider__button {
@@ -55,10 +54,15 @@
 
 @media only screen and (min-width: $tablet-width) {
   .slider {
-    flex-direction: row;
+    display: block;
   }
 
-  .slider__selector, .slider__button {
+  .slider__content {
+    width: auto;
+
+  }
+
+  .slider__selectors, .slider__button {
     display: none;
   }
 }
