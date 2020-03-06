@@ -1,0 +1,28 @@
+.checkbox {
+  input {
+    position: absolute;
+    
+    &::after {
+      cursor: pointer;
+      display: block;
+      width: 16px;
+      height: 16px;
+      
+      content: "";
+      background-color: #FC9B09;
+      box-shadow: 0px 0px 3px rgba(201, 64, 66, 0.6);
+      border-radius: 2px;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &:checked::after {
+      @include background-image("check-white.svg");
+      background-position: center;
+    }
+  }
+  label {
+    padding-left: 26px;
+  }
+}

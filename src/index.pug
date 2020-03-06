@@ -114,7 +114,7 @@ mixin checkbox(name, label, checked)
   - const id = `checkbox-${name}`
   
   .checkbox
-    input(type="checkbox", checked=checked, name=name, id=id)
+    input(type="checkbox", checked= checked ? "true" : "false", name=name, id=id)
     label(for=id) !{label}
 
 <!DOCTYPE html>
@@ -288,7 +288,7 @@ html(lang="en")
           +label_input("form__label-input", "email", "", "Email", "email", "Электронная почта", true)
           +label_input("form__label-input", "first-name", "Иван", "Имя", "text", "", true)
           +label_input("form__label-input", "last-name", "Громов", "Фамилия", "text", "", true)
-          +label_input("form__label-input", "phone", "", "Телефон", "text", "+7 (905) 184-81-40", true)
+          +label_input("form__label-input", "phone", "", "Телефон", "tel", "+7 (905) 184-81-40", true)
           +card_input("card", "Данные карты", true)
           .form__license
             +checkbox("license-agree", "Я согласен с пользовательским соглашением и публичной офертой", true)
