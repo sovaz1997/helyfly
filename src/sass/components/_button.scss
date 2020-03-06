@@ -1,5 +1,6 @@
 .button {
   @include set-font(16px, 20px, 900);
+  cursor: pointer;
   background-color: transparent;
   border-radius: 3px;
   text-decoration: none;
@@ -13,7 +14,6 @@
   padding: 25px;
   
   &--light {
-    border-color: #FFFFFF;
     color: #FFFFFF;
     border-radius: 7px;
     border: 3px solid #FFFFFF;
