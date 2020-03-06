@@ -5,6 +5,8 @@
 
 .review__author {
   display: flex;
+  position: relative;
+  padding-bottom: 46px;
 }
 
 .review__author-image {
@@ -49,4 +51,31 @@
 .review__date {
   @include set-font(14px, 21px);
   color: #B3B3B3;
+}
+
+.review__message-header {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 14px 0;
+}
+
+@include desktop-media {
+  .review__message-header {
+    position: static;
+    padding-top: 10px;
+  }  
+
+  .review__evaluate-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .review__author-name {
+    margin-bottom: 10px;
+  }
+
+  .review__stars {
+    margin-right: 50px;
+  }
 }
