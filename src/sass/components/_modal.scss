@@ -21,6 +21,7 @@
 }
 
 .modal__form {
+  position: relative;
   background-color: #ffffff;
   padding: 51px 10px 36px;
   display: flex;
@@ -29,4 +30,10 @@
   z-index: 2;
   border-radius: 6px;
   margin: 0 15px;
+}
+
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
