@@ -12,11 +12,23 @@
   color: #FC9B09;
   box-sizing: border-box;
   padding: 25px;
+
+  transition: 0.2s;
+
+  &:hover {
+    color: #FFFFFF;
+    background-color: #FC9B09;
+  }
   
   &--light {
     color: #FFFFFF;
     border-radius: 7px;
     border: 3px solid #FFFFFF;
+
+    &:hover {
+      background-color: #FFFFFF;
+      color: $color-text-base;
+    }
   }
 
   &--mini {
