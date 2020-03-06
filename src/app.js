@@ -45,8 +45,6 @@ const openModal = () => {
 
   const modalClose = modal.querySelector(".modal__close");
 
-  
-
   const closeModal = () => {
     modal.classList.add("modal--closed");
 
@@ -64,6 +62,7 @@ const openModal = () => {
   document.addEventListener("keydown", escKeyDown);
 }
 
-modalButtons.forEach(((el => {
-  el.addEventListener("click", openModal);
-})));
+
+for(let i = 0; i < modalButtons.length; ++i) {
+  modalButtons[i].addEventListener("click", openModal);
+}

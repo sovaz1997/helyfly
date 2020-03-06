@@ -108,3 +108,4 @@ dist
 
 src/*.html
 src/css
+src/script.js
