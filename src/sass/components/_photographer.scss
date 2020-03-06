@@ -1,6 +1,8 @@
 .photographer {
   display: flex;
   flex-shrink: 0;
+  width: 290px;
+  position: relative;
 
   &--vertical {
     flex-direction: column;
@@ -13,6 +15,7 @@
     }
 
     .photographer__image {
+      padding-top: 10px;
       margin-bottom: 23px;
     }
 
@@ -55,4 +58,13 @@
   color: $color-text-link;
   width: 100%;
   display: block;
+}
+
+.photographer__heart {
+  right: 0;
+  top: 0;
+
+  @include block-size(31px, 27px);
+  @include background-image("heart.svg");
+  position: absolute;
 }

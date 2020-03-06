@@ -38,5 +38,10 @@
 
   .photosession__header {
     @include set-font(40px, 49px, 500);
+    margin-bottom: 18px;
+  }
+
+  .photosession__description {
+    @include set-font(18px, 26px);
   }
 }

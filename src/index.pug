@@ -44,13 +44,15 @@ mixin payment_options(mix_class)
     a(href="#").payment-options__item.payment-options__item--pp
 
 
-mixin photographer(mix_class, isHorizontal, showmore_text, isMini)
+mixin photographer(mix_class, isHorizontal, showmore_text, isMini, heart)
   .photographer(class=`${mix_class} ${isHorizontal ? "photographer--horizontal" : "photographer--vertical"} ${isMini ? "photographer--mini": ""}`)
     |
     |
     img(src=`${imgPath}/photographer.png`, alt="").photographer__image
     
     .photographer__wrapper
+      if heart
+        .photographer__heart
       .photographer__name Марина Иванова
       .photographer__profession Фотограф
       |
@@ -166,8 +168,7 @@ html(lang="en")
                 img(src=`${imgPath}/photo-${i}.jpg`, alt="").photos__list-image
       section.section.about.content
         h2.visually-hidden Организатор
-        .about__heart
-        +photographer("about__photographer", false, "Показать больше информации о фотографе")
+        +photographer("about__photographer", false, "Показать больше информации о фотографе", false, true)
 
         article.article.about__article
           h2.artical__header Об организаторе

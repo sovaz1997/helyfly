@@ -7,14 +7,26 @@
   margin-bottom: 30px;
 }
 
-.about__photographer {
-  margin-bottom: 25px;
-}
-
 .about__heart {
   @include block-size(31px, 27px);
   @include background-image("heart.svg");
   position: absolute;
   right: 15px;
   top: 40px;
+}
+
+.about__photographer {
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: $tablet-width) {
+  .about__photographer {
+    position: absolute;
+    top: 68px;
+    right: 15px;
+  }
+
+  .about__article {
+    width: 50%;
+  }
 }
