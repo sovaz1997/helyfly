@@ -30,7 +30,7 @@
   margin: 0 auto;
 }
 
-@media only screen and (min-width: $tablet-width)  {
+@include desktop-media {
   .welcome {
     height: 840px;
   }

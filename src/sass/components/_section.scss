@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .section__header {
     @include set-font(20px, 29px);
     text-align: left;

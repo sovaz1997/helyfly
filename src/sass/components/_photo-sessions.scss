@@ -25,7 +25,7 @@
   }
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .photo-sessions__header {
     @include set-font(20px, 29px, 500);
   }

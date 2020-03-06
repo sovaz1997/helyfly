@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .photosession__inner {
     width: 45%;
   }

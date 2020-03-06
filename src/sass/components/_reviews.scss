@@ -1,6 +1,7 @@
 .reviews {
   padding-top: 40px;
   padding-bottom: 81px;
+  max-width: 630px;
 }
 
 .reviews__header {
@@ -15,4 +16,14 @@
 .reviews__item {
   padding: 30px 0 30px;
   border-bottom: 1px solid #C7C7C7;
+}
+
+.reviews__header {
+  @include set-font(20px, 29px, 500);
+}
+
+@include desktop-media {
+  .reviews__header {
+    margin-bottom: 20px;
+  }
 }

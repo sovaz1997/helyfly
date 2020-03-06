@@ -10,7 +10,7 @@
   }
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .content {
     box-sizing: content-box;
     &--desktop {

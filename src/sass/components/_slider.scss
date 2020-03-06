@@ -53,7 +53,7 @@
   }
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .slider {
     display: block;
   }

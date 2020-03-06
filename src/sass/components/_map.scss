@@ -21,7 +21,7 @@
   height: 423px;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .map__slider {
     width: 420px;
     padding: 0;

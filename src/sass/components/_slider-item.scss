@@ -37,7 +37,7 @@
   align-items: center;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .slider-item {
     display: flex;
     flex-direction: row;

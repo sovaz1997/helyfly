@@ -18,7 +18,7 @@
   display: block;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .photos__list {
     overflow: visible;
     flex-wrap: wrap;

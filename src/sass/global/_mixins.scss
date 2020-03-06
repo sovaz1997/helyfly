@@ -35,3 +35,9 @@
   @include arrow-down;
   transform: rotate(-90deg);
 }
+
+@mixin desktop-media {
+  @media screen and (min-width: $tablet-width) {
+    @content;
+  }
+}

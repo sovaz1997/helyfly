@@ -19,7 +19,7 @@
   margin: 0 auto;
 }
 
-@media only screen and (min-width: $tablet-width) {
+@include desktop-media {
   .about__photographer {
     position: absolute;
     top: 68px;
