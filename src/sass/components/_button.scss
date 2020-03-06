@@ -50,4 +50,16 @@
       background-color: transparent;
     }
   }
+
+  &--submit {
+    background: #FC9B09;
+    border: none;
+    @include set-font(14px, 17px);
+    color: #ffffff;
+    padding: 16px 68px;
+
+    &:hover {
+      background-color: #cf7d02;
+    }
+  }
 }
