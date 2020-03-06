@@ -22,7 +22,7 @@ mixin shedule_item(from, to, cost, left_places, mix_class)
     span.shedule-item__info #{from} - #{to}
     span.shedule-item__info <strong>#{cost}$</strong>
     span.shedule-item__info Осталось &mdash; #{left_places}
-    button.button.button--mini.shedule-item__button Выбрать
+    button.button.button--mini.shedule-item__button.modal-button Выбрать
 
 mixin many_stars(description, mix_class)
   div(class=mix_class).many-stars
@@ -143,7 +143,7 @@ html(lang="en")
               span.price__value 1500₽
           |
           |  
-          button.button.button--light.welcome__button Забронировать место
+          button.button.button--light.welcome__button.modal-button Забронировать место
       section.section.content.photosession
         .photosession__inner
           h2.section__header.photosession__header Фотосессия в вертолете
@@ -278,10 +278,10 @@ html(lang="en")
           button.site-footer__lang-choser RU
         span.site-footer__support Тех. поддержка: 8(800)700-00-00
         span.site-footer__copyright &copy; 2018 HELYFLY. All Rights Reserved.
-    section.modal
+    section.modal.modal--closed
       .modal-opacity
       .modal__form
-        button.modal__close.button.button--close
+        button.button.button--close.modal__close
         h2.modal__header Бронирование
         form.form
           +label_input("form__label-input", "date", "2019-09-14", "Дата", "date", "", true)
@@ -293,4 +293,4 @@ html(lang="en")
           .form__license
             +checkbox("license-agree", "Я согласен с пользовательским соглашением и публичной офертой", true)
           button(type="submit").form__submit.button.button--submit Забронировать
-
+  script(src="script.js")
