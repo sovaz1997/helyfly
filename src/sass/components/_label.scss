@@ -1,0 +1,11 @@
+.label {
+  @include set-font(16px, 20px, 500);
+  margin-bottom: 10px;
+
+  &--required {
+    &::after {
+      content: "*";
+      color: #C94042;
+    }
+  }
+}

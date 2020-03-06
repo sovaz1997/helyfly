@@ -1,0 +1,29 @@
+.form__label-input {
+  margin-bottom: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__card-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__card-inputs {
+  display: flex;
+  flex-direction: column;
+  
+  .input-text:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    margin-bottom: -1px;
+  }
+
+  .input-text:first-child {
+    border-radius: 3px 3px 0 0;
+    margin-bottom: -1px;
+  }
+
+  .input-text:last-child {
+    margin-top: -1px;
+  }
+}

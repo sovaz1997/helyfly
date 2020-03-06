@@ -1,0 +1,10 @@
+.input-text {
+  @include set-font(16px, 20px);
+  border: 1px solid #C7C7C7;
+  border-radius: 3px;
+  padding: 12px 20px;
+
+  &::placeholder {
+    color: #C7C7C7;
+  }
+}
