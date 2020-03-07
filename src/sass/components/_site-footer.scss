@@ -37,3 +37,11 @@
     padding-right: 6px;
   }
 }
+
+@include desktop-media {
+
+  .site-footer__logo {
+    width: 129px;
+    height: 23px;
+  }
+}
