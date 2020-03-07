@@ -91,10 +91,10 @@ mixin slider_item(number, name, description, isActive)
       span.slider-item__description !{description}
 
 mixin input(name, value, type, placeholder, required, id, pattern, maxlength)
-  input(class="input-text", type=type, name=name, value=value, id=id, placeholder=placeholder, required=required ? "true" : "false", pattern= pattern ? pattern : false, maxlength= maxlength ? maxlength : false)
+  input(class="input-text", type=type, name=name, value=value, id=id, placeholder= placeholder.length ? placeholder : false, required, pattern= pattern ? pattern : false, maxlength= maxlength ? maxlength : false)
 
 mixin label(label, required)
-  label(for=id, class=`label ${required ? 'label--required' : ''}`) !{label}
+  label(for=id, class=`label ${required ? 'label--required' : false}`) !{label}
 
 mixin label_input(mix_class, name, value, label, type, placeholder, required)
   - const id = `input-${name}`
@@ -114,11 +114,11 @@ mixin checkbox(name, label, checked)
   - const id = `checkbox-${name}`
   
   .checkbox
-    input(type="checkbox", checked= checked ? "true" : "false", name=name, id=id)
+    input(type="checkbox", checked, name=name, id=id)
     label(for=id) !{label}
 
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
@@ -225,7 +225,7 @@ html(lang="en")
       section.map
         h2.visually-hidden Карта
         .map__script
-          script(type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7e5c2aea2cd24535c4a5910c2f2cb3aa911dfaa5d6b09efad65fe0dff773942a&amp;width=100%25&amp;lang=ru_RU&amp;scroll=false")
+          script(async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7e5c2aea2cd24535c4a5910c2f2cb3aa911dfaa5d6b09efad65fe0dff773942a&amp;width=100%25&amp;lang=ru_RU&amp;scroll=false")
         .content
           .map__inner
             .slider.map__slider
@@ -292,4 +292,4 @@ html(lang="en")
           .form__license
             +checkbox("license-agree", "Я согласен с пользовательским соглашением и публичной офертой", true)
           button(type="submit").form__submit.button.button--submit Забронировать
-  script(src="js/script.js")
+    script(src="js/script.js")
